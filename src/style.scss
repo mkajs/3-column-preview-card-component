@@ -108,6 +108,13 @@ body {
       text-decoration: none;
       font-size: 1.8rem;
       margin-top: auto;
+      border: 1px solid #fff;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #fff;
+        background-color: transparent;
+      }
     }
 
     &--1 {

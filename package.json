@@ -1,0 +1,30 @@
+{
+  "name": "3-column-preview-card-component-main",
+  "version": "1.0.0",
+  "description": "3-column preview card component coding challenge",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.4.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.1"
+  }
+}

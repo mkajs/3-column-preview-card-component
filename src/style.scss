@@ -1,0 +1,133 @@
+/// Variables
+
+$Bright-orange: hsl(31, 77%, 52%);
+$Dark-cyan: hsl(184, 100%, 22%);
+$Very-dark-cyan: hsl(179, 100%, 13%);
+$Transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+$Very-light-gray-background-headings-buttons: hsl(0, 0%, 95%);
+
+//////////////////////////////////////////////////////////////
+///Responsive function
+@mixin respond($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 56.25em) {
+      @content;
+    } //900px
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+/// Resets
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  transition: all 0.3s;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 50%; // 1rem = 8px, 8px/16px = 50%
+
+  @include respond(desktop) {
+    //  600 < width?
+    font-size: 62.5%; //1 rem = 10px, 10/16 = 62.5%
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+/// Typography
+
+@font-face {
+  font-family: "iran-sans";
+  src: url("/src/fonts/IRANSansWeb.ttf");
+}
+@font-face {
+  font-family: "IRANSansWeb(FaNum)";
+  src: url("/src/fonts/IRANSansWeb\(FaNum\).ttf");
+}
+
+body {
+  font-family: "iran-sans", sans-serif;
+  background-color: $Very-light-gray-background-headings-buttons;
+  color: $Transparent-white-paragraphs;
+  text-decoration: none;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+//////////main styles
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.fa-num {
+  font-family: "IRANSansWeb(FaNum)";
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 33rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  @include respond(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    flex-direction: row-reverse;
+    max-width: 92rem;
+  }
+
+  &__item {
+    padding: 4.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 3rem;
+
+    h5 {
+      font-weight: 700;
+      font-size: 2.4rem;
+    }
+
+    a {
+      border-radius: 3rem;
+      padding: 1.5rem 3rem;
+      background-color: #fff;
+      text-decoration: none;
+      font-size: 1.8rem;
+      margin-top: auto;
+    }
+
+    &--1 {
+      background-color: $Bright-orange;
+      a {
+        color: $Bright-orange;
+      }
+    }
+    &--2 {
+      background-color: $Dark-cyan;
+      a {
+        color: $Dark-cyan;
+      }
+    }
+    &--3 {
+      background-color: $Very-dark-cyan;
+
+      a {
+        color: $Very-dark-cyan;
+      }
+    }
+  }
+}
